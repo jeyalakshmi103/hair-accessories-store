@@ -64,7 +64,14 @@ section{padding:55px 7%}
 footer{background:#63374b;color:white;text-align:center;padding:28px 7%;font-size:13px}
 footer p{margin:5px 0}
 @media(max-width:700px){
-header{justify-content:center;text-align:center}
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  text-align:left;
+  width:100%;
+  box-sizing:border-box;
+}
 nav{justify-content:center;gap:13px}
 .hero{grid-template-columns:1fr;padding:45px 6%;text-align:center}
 .hero p{margin-left:auto;margin-right:auto}
@@ -81,6 +88,7 @@ section{padding:42px 5%}
 .cart-box{padding:17px}
 .menu-toggle{
 display:block;
+margin-left:auto;
 background:#e879a9;
 color:white;
 border:none;

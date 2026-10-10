@@ -79,7 +79,27 @@ section{padding:42px 5%}
 .product-art{height:200px}
 .benefits{grid-template-columns:1fr}
 .cart-box{padding:17px}
+.menu-toggle{
+display:block;
+background:#e879a9;
+color:white;
+border:none;
+padding:8px 13px;
+font-size:24px;
+border-radius:8px;
+cursor:pointer;
 }
+
+nav{
+display:none;
+flex-direction:column;
+width:100%;
+align-items:center;
+}
+
+nav.open{
+display:flex;
+}}
 </style>
 </head>
 <body>
@@ -88,7 +108,9 @@ section{padding:42px 5%}
 
 <header>
 <a href="#home" class="logo">Swa Charm</a>
-<nav>
+<button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+
+<nav id="main-nav">
 <a href="#home">Home</a>
 <a href="#categories">Categories</a>
 <a href="#products">Products</a>
@@ -286,6 +308,25 @@ window.open(url,"_blank");
 
 document.getElementById("year").textContent = new Date().getFullYear();
 renderCart();
+const menuToggle = document.getElementById("menu-toggle");
+const mainNav = document.getElementById("main-nav");
+
+menuToggle.addEventListener("click", function () {
+  const isOpen = mainNav.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", isOpen);
+  menuToggle.setAttribute(
+    "aria-label",
+    isOpen ? "Close menu" : "Open menu"
+  );
+});
+
+mainNav.querySelectorAll("a").forEach(function (link) {
+  link.addEventListener("click", function () {
+    mainNav.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open menu");
+  });
+});
 </script>
 
 </body>

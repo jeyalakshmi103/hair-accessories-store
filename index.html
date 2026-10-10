@@ -178,46 +178,73 @@ display:flex;
 </div>
 </section>
 <section id="products">
-<div class="section-heading">
-<h2>Our Lovely Collection</h2>
-<p>Little details, lovely styles</p>
-</div>
+  <div class="section-heading">
+    <h2>Explore Our Collections</h2>
+    <p>Little details, lovely styles</p>
+  </div>
 
-<div class="products">
-<article class="product">
-<div class="product-art">
-  <img src="./WhatsApp%20Image%202026-10-09%20at%208.10.51%20PM.jpeg" alt="Pretty Scrunchies">
-</div>
-<div class="product-info">
-<h3>Pretty Scrunchies</h3>
-<p>Soft and stylish everyday scrunchies.</p>
-<div class="price">₹99</div>
-<button class="add-btn" onclick="addToCart(1)">Add to Cart</button>
-</div>
-</article>
+  <div id="category-list" class="category-showcase">
 
-<article class="product">
-<div class="product-art">🌸</div>
-<div class="product-info">
-<h3>Cute Hair Clips</h3>
-<p>Add a pretty touch to your hairstyle.</p>
-<div class="price">₹79</div>
-<button class="add-btn" onclick="addToCart(2)">Add to Cart</button>
-</div>
-</article>
+    <!-- Scrunchies -->
+    <article class="category-card">
+      <div class="category-cover">
+        <img
+          src="./WhatsApp%20Image%202026-10-09%20at%208.10.51%20PM.jpeg"
+          alt="Scrunchies Collection">
+      </div>
+      <div class="category-details">
+        <h3>Scrunchies</h3>
+        <p>Soft, stylish scrunchies to make every hairstyle beautiful.</p>
+        <button class="add-btn"
+                onclick="openCategory('scrunchies')">
+          Explore Scrunchies →
+        </button>
+      </div>
+    </article>
 
-<article class="product">
-<div class="product-art">💗</div>
-<div class="product-info">
-<h3>Lovely Headbands</h3>
-<p>Charming headbands for everyday wear.</p>
-<div class="price">₹129</div>
-<button class="add-btn" onclick="addToCart(3)">Add to Cart</button>
-</div>
-</article>
-</div>
+    <!-- Hair Bands -->
+    <article class="category-card">
+      <div class="category-cover category-placeholder">🎀</div>
+      <div class="category-details">
+        <h3>Hair Bands</h3>
+        <p>Pretty and comfortable hair bands for everyday style.</p>
+        <button class="add-btn"
+                onclick="openCategory('hairbands')">
+          Explore Hair Bands →
+        </button>
+      </div>
+    </article>
+
+    <!-- Hair Clips -->
+    <article class="category-card">
+      <div class="category-cover category-placeholder">🌸</div>
+      <div class="category-details">
+        <h3>Hair Clips</h3>
+        <p>Cute clips to add a lovely touch to your look.</p>
+        <button class="add-btn"
+                onclick="openCategory('hairclips')">
+          Explore Hair Clips →
+        </button>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- Hidden product gallery -->
+  <div id="category-gallery" hidden>
+    <div class="section-heading">
+      <h2 id="gallery-title">Our Collection</h2>
+      <p id="gallery-description"></p>
+    </div>
+
+    <div id="gallery-products" class="products"></div>
+
+    <button type="button" class="add-btn"
+            onclick="closeCategory()">
+      ← Back to Collections
+    </button>
+  </div>
 </section>
-
 
 <section class="benefits">
 <div><span>🎀</span><h3>Lovely Designs</h3><p>Pretty styles for every occasion.</p></div>
